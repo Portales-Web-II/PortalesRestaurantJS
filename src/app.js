@@ -19,18 +19,18 @@ app.set('views', './src/views');
 
 app.use(express.static(__dirname + "/public"));
 
-app.use('/app', require('./rutas/index'))
-app.use('/api/', require('./rutas'));
-app.use('/api/productos/', require('./rutas/rutaProducto'));
-app.use('/api/tipoProductos/', require('./rutas/rutaTipoProducto'));
-app.use('/api/usuarios', require('./rutas/rutasUsuario'));
-app.use('/api/autenticacion', require('./rutas/rutasAutenticacion'));
-app.use('/api/personas/', require('./rutas/rutaPersonas'));
-app.use('/api/cargos/', require('./rutas/rutaCargos'));
-app.use('/api/facturas/', require('./rutas/rutaFacturas'));
-app.use('/api/pedidos/', require('./rutas/rutaPedidos'));
-app.use('/api/productosCombo/', require('./rutas/rutaProductosCombo'));
-app.use('/api/productosPedido/', require('./rutas/rutaProductosPedido'));
+app.use('/app', require('./routes/index'))
+app.use('/api/', require('./routes'));
+app.use('/api/productos/', require('./routes/rutaProducto'));
+app.use('/api/tipoProductos/', require('./routes/rutaTipoProducto'));
+app.use('/api/usuarios', require('./routes/rutasUsuario'));
+app.use('/api/autenticacion', require('./routes/rutasAutenticacion'));
+app.use('/api/personas/', require('./routes/rutaPersonas'));
+app.use('/api/cargos/', require('./routes/rutaCargos'));
+app.use('/api/facturas/', require('./routes/rutaFacturas'));
+app.use('/api/pedidos/', require('./routes/rutaPedidos'));
+app.use('/api/productosCombo/', require('./routes/rutaProductosCombo'));
+app.use('/api/productosPedido/', require('./routes/rutaProductosPedido'));
 
 //Aperturo el puerto donde iniciará
 app.listen(5000, () =>{

@@ -5,11 +5,14 @@ AppController.index = (req, res) => {
 }
 
 AppController.menu = (req, res) => {
-    res.render('menu');
+    res.render('products');
 }
 
 AppController.about = (req, res) => {
     res.render('about');
 }
 
+AppController.login = (req, res) => {
+    res.render('login');
+}
 module.exports = AppController;

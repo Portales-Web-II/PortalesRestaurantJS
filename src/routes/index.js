@@ -1,11 +1,8 @@
-//Definimos las variables
-const { Router } = require('express');
-const res = require('express/lib/response');
-const { render } = require('express/lib/response')
-const router = Router();
+const express = require ('express');
+const appController = require ('../controllers/appController');
+const routes = express.Router ();
 
-router.get('/', (req, res) => {
-    res.render('home');
-})
-
-module.exports = router;
+routes.get( '/', appController.index );
+routes.get( '/menu', appController.menu );
+routes.get( '/about', appController.about );
+module.exports = routes;

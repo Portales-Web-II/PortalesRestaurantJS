@@ -20,17 +20,8 @@ app.set('views', './src/views');
 app.use(express.static(__dirname + "/public"));
 
 app.use('/app', require('./routes/index'))
-app.use('/api/', require('./routes'));
-app.use('/api/productos/', require('./routes/rutaProducto'));
-app.use('/api/tipoProductos/', require('./routes/rutaTipoProducto'));
-app.use('/api/usuarios', require('./routes/rutasUsuario'));
-app.use('/api/autenticacion', require('./routes/rutasAutenticacion'));
-app.use('/api/personas/', require('./routes/rutaPersonas'));
-app.use('/api/cargos/', require('./routes/rutaCargos'));
-app.use('/api/facturas/', require('./routes/rutaFacturas'));
-app.use('/api/pedidos/', require('./routes/rutaPedidos'));
-app.use('/api/productosCombo/', require('./routes/rutaProductosCombo'));
-app.use('/api/productosPedido/', require('./routes/rutaProductosPedido'));
+app.use('/app/menu', require('./routes/rutaProducto'))
+
 
 //Aperturo el puerto donde iniciará
 app.listen(5000, () =>{

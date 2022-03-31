@@ -24,7 +24,7 @@ exports.listarProductos = async (req, res) =>{
 
         res.render('products', {pagina: "Menu", listaProductos} )
     } catch (error) {
-        res.render('error', {pagina: "ERROR", error} )
+        res.render('error', {pagina: "ERROR", error, layout: false} )
     }
 
 };

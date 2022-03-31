@@ -11,6 +11,7 @@
     </div>
   </div>
 </div>
+
 <!-- Linea separadora entre contenedores -->
 <div class="container-fluid" style="width: 90%;">
   <br>
@@ -23,13 +24,14 @@
   <div class="row row-cols-1 row-cols-md-2 g-4">
     {{#each listaProductos}}
     <div class="col">
-      <div class="card hover-shadow">
+      <div class="card hover-shadow text-center">
         <div class="p-5 text-center bg-image" style="
       background-image: url('{{imagen}}');
       height: 400px;">
         </div>
         <div class="card-body">
           <h5 class="card-title">{{nombre}}</h5>
+          <h5 class="card-title">Lps. {{precio}}</h5>
           <p class="card-text">{{descripcion}}</p>
           {{!-- Datos Importantes del producto --}}
           <form action="vistaMenus.php" method="POST">

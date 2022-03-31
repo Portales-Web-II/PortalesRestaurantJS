@@ -5,8 +5,7 @@ const router = Router();
 
 const pagina = "Menu"
 
-router.get('/', (req, res) => {
-    res.render('menu' , {pagina});
-});
+router.get('/', controladorProducto.listarProductos);
+
 
 module.exports = router;

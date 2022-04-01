@@ -1,5 +1,6 @@
 //Definición de variables importantes
 const express = require('express');
+const cookieSession = require('cookie-session');
 const morgan = require('morgan');
 const path  = require('path');
 const { engine } = require('express-handlebars');

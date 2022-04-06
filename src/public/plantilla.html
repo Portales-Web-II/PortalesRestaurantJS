@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- estilos y scripts de bootstrap -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Google Fonts Roboto -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <title>Portales Restaurant</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <!-- MENU NAVBAR -->
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <!-- Container wrapper -->
+            <div class="container-fluid" style="width: 93%;">
+                <!-- Toggle button -->
+                <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+                    data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+
+                <!-- Collapsible wrapper -->
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Navbar brand -->
+                    <a class="navbar-brand mt-2 mt-lg-0" href="#">
+                        <img src="./assets/img/logo.png" height="75" alt="MDB Logo" loading="lazy" />
+                    </a>
+                    <!-- links izquierdos -->
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Menu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Sobre Nosotros</a>
+                        </li>
+                    </ul>
+                    <!-- links izquierdos -->
+                </div>
+                <!-- Collapsible wrapper -->
+
+                <!-- elementos derechos -->
+                <div class="d-flex align-items-center">
+                    <!-- carrito -->
+                    <a class="text-reset me-3" href="#">
+                        <i class="fas fa-shopping-cart fs-4"></i>
+                        <span class="badge rounded-pill badge-notification bg-danger">1</span>
+                    </a>
+
+                    <!-- Perfil de usuario -->
+                    <div class="dropstart">
+                        <a class="dropstart-toggle d-flex align-items-center hidden-arrow" href="#"
+                            id="navbarDropdownMenuAvatar" role="button" data-mdb-toggle="dropdown"
+                            aria-expanded="false">
+                            <img src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp" class="rounded-circle"
+                                height="30" alt="Black and White Portrait of a Man" loading="lazy" />
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuAvatar">
+                            <li>
+                                <a class="dropdown-item" href="#">Mi Perfil</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Configuración</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">cerrar sesión</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Right elements -->
+            </div>
+            <!-- Container wrapper -->
+        </nav>
+        <!-- MENU NAVBAR -->
+
+    </header>
+
+        <!-- Background image -->
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="./assets/img/Delicious-Japanese-food-sushi-sauce_3840x1200.jpg" class="d-block w-100"
+                        alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="./assets/img/Fast-food-burgers-beer-bottle-meal_3840x1200.jpg" class="d-block w-100"
+                        alt="...">
+                </div>
+                <div class="carousel-item" data-bs-interval="3000">
+                    <img src="./assets/img/Meat-spices-wine-food_3840x1200.jpg" class="d-block w-100" alt="...">
+                </div>
+            </div>
+        </div>
+        <!-- Background image -->
+
+
+
+    <!-- Sección Contenido de la pagina -->
+    <!-- Linea separadora entre contenedores -->
+    <div class="container-fluid" style="width: 90%;">
+        <br>
+        <hr style="color: black;">
+        <br>
+    </div>
+    <!-- Linea separadora entre contenedores -->
+
+    <!-- Contenido de servicios -->
+
+    <div class="container container-web-page">
+        <h3 class="text-center text-uppercase poppins-regular font-weight-bold">Nuestros servicios</h3>
+        <br>
+        <div class="row">
+            <div class="col-12 col-sm-6 col-md-4">
+                <p class="text-center"><i class="fas fa-shipping-fast fa-5x"></i></p>
+                <h5 class="text-center text-uppercase poppins-regular font-weight-bold">Envíos a domicilio</h5>
+                <p class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione ad possimus
+                    modi repellendus? Expedita, vitae rerum at aliquam eligendi soluta veniam ut dolor facere fugiat
+                    quod, maxime ad accusamus quisquam.</p>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <p class="text-center"><i class="fas fa-utensils fa-5x"></i></p>
+                <h5 class="text-center text-uppercase poppins-regular font-weight-bold">Ventas al por mayor</h5>
+                <p class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione ad possimus
+                    modi repellendus? Expedita, vitae rerum at aliquam eligendi soluta veniam ut dolor facere fugiat
+                    quod, maxime ad accusamus quisquam.</p>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <p class="text-center"><i class="fas fa-store-alt fa-5x"></i></p>
+                <h5 class="text-center text-uppercase poppins-regular font-weight-bold">Reservaciones de local</h5>
+                <p class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione ad possimus
+                    modi repellendus? Expedita, vitae rerum at aliquam eligendi soluta veniam ut dolor facere fugiat
+                    quod, maxime ad accusamus quisquam.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Linea separadora entre contenedores -->
+    <div class="container-fluid" style="width: 90%;">
+        <br>
+        <hr style="color: black;">
+        <br>
+    </div>
+    <!-- Linea separadora entre contenedores -->
+
+    <div class="container-fluid" style="width: 85%;">
+        <div class="row row-cols-1 row-cols-md-2 g-4">
+            <div class="col">
+                <div class="card hover-shadow">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top"
+                        alt="Hollywood Sign on The Hill" />
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card hover-shadow">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top"
+                        alt="Palm Springs Road" />
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card hover-shadow">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top"
+                        alt="Los Angeles Skyscrapers" />
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                            additional content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card hover-shadow">
+                    <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top"
+                        alt="Skyscrapers" />
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">
+                            This is a longer card with supporting text below as a natural lead-in to
+                            additional content. This content is a little bit longer.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br>
+        <div class="container-fluid"></div>
+        <center>
+            <button type="button" class="btn btn-warning btn-rounded fs-5" style="width: 45%; height: auto;">Ir al
+                menu</button>
+        </center>
+    </div>
+    </div>
+
+
+    <!-- Linea separadora entre contenedores -->
+    <div class="container-fluid" style="width: 90%;">
+        <br>
+        <hr style="color: black;">
+        <br>
+    </div>
+    <!-- Linea separadora entre contenedores -->
+
+    <!-- Crear cuenta -->
+    <div class="container-fluid" style="width: 90%;">
+        <center>
+            <div class="card mb-3 text-center hover-shadow" style="max-width: 65%;">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <div class="bg-image hover-overlay hover-zoom hover-shadow ripple">
+                            <img src="./assets/img/crearCuenta.jpg" class="w-100" />
+                            <a href="#!">
+                                <div class="mask" style="background-color: rgba(72, 73, 73, 0.068)"></div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <br><br><br>
+                            <h5 class="card-title">Crear cuenta</h5>
+                            <p class="card-text">Crea tu cuenta para poder realizar pedidos de platillos hasta la puerta
+                                de tu casa, es muy fácil y rápido</p>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-rounded fs-6"
+                            style="width: 200px; height: 50px;">Registrarse</button>
+                    </div>
+                </div>
+            </div>
+        </center>
+    </div>
+
+    <!-- Crear cuenta -->
+
+
+    <!-- Sección Contenido de la pagina -->
+
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light text-muted">
+
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <div class="me-5 d-none d-lg-block">
+                <span>Conectate con nosotros en nuestras redes sociales:</span>
+            </div>
+
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Portales-Web-II" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fa-solid fa-utensils"></i>
+                            Portales Restaurant
+                        </h6>
+                        <p>
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam alias ipsum est soluta
+                            voluptatem tempore debitis sint expedita praesentium iusto.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Angular</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">React</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Vue</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Laravel</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Useful links
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Pricing</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Settings</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Orders</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Help</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Contactanos
+                        </h6>
+                        <p><i class="fas fa-home me-3"></i> Siguatepeque, Honduras</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>portalesrest@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> +504 99-45-67-88</p>
+                        <p><i class="fas fa-print me-3"></i> +504 98-45-67-89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(41, 40, 40, 0.05);">
+            © 2022 Copyright:
+            <a class="text-reset fw-bold" href="https://github.com/Portales-Web-II/PortalesRestaurantJS">Grupo 5</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+        integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+</body>
+
+</html>

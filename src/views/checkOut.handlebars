@@ -43,48 +43,50 @@
                                 <label for="validationTextarea" class="form-label">Dirección de entrega</label>
                             </div>
                             <p class="fs-4">Método de pago</p>
-                            <div class="form-check">
-                                <input type="radio" class="form-check-input" id="validationFormCheck2"
-                                    name="radio-stacked" required />
-                                <label class="form-check-label" for="validationFormCheck2">Efectivo</label>
-                            </div>
-                            <div class="form-check mb-3">
-                                <input type="radio" class="form-check-input" id="validationFormCheck3"
-                                    name="radio-stacked" required />
-                                <label class="form-check-label" for="validationFormCheck3">Tarjeta de
-                                    credito/debito</label>
-                                <div class="invalid-feedback">Debe seleccionar al menos un método de pago</div>
-                            </div>
-                            <div class="pagoEfectivo">
-                                <div class="form-outline">
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+                                        data-bs-target="#home" type="button" role="tab" aria-controls="home"
+                                        aria-selected="true">Efectivo</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+                                        data-bs-target="#profile" type="button" role="tab" aria-controls="profile"
+                                        aria-selected="false">Tarjeta de crédito/debito</button>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                    aria-labelledby="home-tab">
                                     <input type="text" class="form-control" id="validationCustom02" value="" required />
                                     <label for="validationCustom02" class="form-label">¿Necesitas cambio?</label>
                                     <div class="valid-feedback">Looks good!</div>
                                 </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <ul class="mb-0 list-inline mt-3">
+                                        <li class="list-inline-item">
+                                            <div class="bg-image hover-overlay ripple">
+                                                <img src="/assets/img/visa.png" class="img-fluid"
+                                                    style="height: 50px;" />
+                                                <a href="#!">
+                                                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.367);">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <div class="bg-image hover-overlay ripple">
+                                                <img src="/assets/img/mastercard.png" class="img-fluid"
+                                                    style="height: 60px;" />
+                                                <a href="#!">
+                                                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.367);">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="pagoTarjeta">
-                                <ul class="mb-0 list-inline mt-3">
-                                    <li class="list-inline-item">
-                                        <div class="bg-image hover-overlay ripple">
-                                            <img src="/assets/img/visa.png" class="img-fluid" style="height: 50px;"/>
-                                            <a href="#!">
-                                                <div class="mask" style="background-color: rgba(0, 0, 0, 0.367);">
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <div class="bg-image hover-overlay ripple">
-                                            <img src="/assets/img/mastercard.png" class="img-fluid" style="height: 60px;"/>
-                                            <a href="#!">
-                                                <div class="mask" style="background-color: rgba(0, 0, 0, 0.367);">
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-
                     </div>
                     <div class="border col">
                         <p class="fs-3">Información adicional</p>

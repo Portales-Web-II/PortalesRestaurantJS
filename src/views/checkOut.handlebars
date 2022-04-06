@@ -1,6 +1,4 @@
-<div class="p-5 text-center bg-image" style="
-      background-image: url('/assets/img/checkout.jpg');
-      height: 400px;">
+<div class="p-5 text-center bg-image" style=" background-image: url('/assets/img/checkout.jpg'); height: 400px;">
     <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
         <div class="d-flex justify-content-center align-items-center h-100">
             <div class="text-white">
@@ -16,9 +14,10 @@
         <div class="col-md">
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <div class="border col">
                         <p class="fs-2">Detalles de facturación</p>
                         <form class="row g-3 needs-validation" novalidate>
+                            <p class="fs-4">Información personal</p>
                             <div class="col-md-4">
                                 <div class="form-outline">
                                     <input type="text" class="form-control" id="validationCustom01" value="" required />
@@ -64,37 +63,70 @@
                                 </div>
                             </div>
                             <div class="pagoTarjeta">
+                                <ul class="mb-0 list-inline mt-3">
+                                    <li class="list-inline-item">
+                                        <div class="bg-image hover-overlay ripple">
+                                            <img src="/assets/img/visa.png" class="img-fluid" style="height: 50px;"/>
+                                            <a href="#!">
+                                                <div class="mask" style="background-color: rgba(0, 0, 0, 0.367);">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        <div class="bg-image hover-overlay ripple">
+                                            <img src="/assets/img/mastercard.png" class="img-fluid" style="height: 60px;"/>
+                                            <a href="#!">
+                                                <div class="mask" style="background-color: rgba(0, 0, 0, 0.367);">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
 
-                            </div>
-                            <div class="col-12">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck"
-                                        required />
-                                    <label class="form-check-label" for="invalidCheck">Estoy de acuerdo con los terminos
-                                        y condiciones</label>
-                                    <div class="invalid-feedback">Debes estar de acuerdo antes de realizar el pago.
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-primary" type="submit">Realizar pago</button>
-                            </div>
-                        </form>
                     </div>
-                    <div class="col">
-                        <p class="fs-2">Información adicional</p>
-                        <form>
-                            <div class="mb-3 pb-1">
-                                <div class="form">
-                                    <textarea class="form-control" id="validationTextarea"
-                                        placeholder="Escriba las notas de su orden" required></textarea>
-                                    <label for="validationTextarea" class="form-label">Notas de la orden</label>
-                                    <div class="invalid-feedback">Please enter a message in the textarea.</div>
-                                </div>
+                    <div class="border col">
+                        <p class="fs-3">Información adicional</p>
+                        <div class="mb-3 pb-1">
+                            <div class="form">
+                                <textarea class="form-control" id="validationTextarea"
+                                    placeholder="Escriba las notas de su orden" required></textarea>
+                                <label for="validationTextarea" class="form-label">Notas de la orden</label>
+                                <div class="invalid-feedback">Please enter a message in the textarea.</div>
                             </div>
+                        </div>
+                        <div class="container-fluid">
+                            <p class="fs-2 text-center">Tu orden</p>
+                            <table class="table table-hover table-bordered table-striped">
+                                <thead>
+                                    <tr class="table-dark">
+                                        <td>Producto</td>
+                                        <td>Cantidad</td>
+                                        <td>Total</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Pollo</td>
+                                        <td>1</td>
+                                        <td>150</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Pizza</td>
+                                        <td>1</td>
+                                        <td>200</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center" style="height: 150px;">
+                            <button class="btn btn-primary" type="submit">Confirmar pedido</button>
+                        </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>

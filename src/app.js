@@ -23,6 +23,8 @@ app.use(express.static(__dirname + "/public"));
 app.use('/app', require('./routes/index'))
 app.use('/app/menu', require('./routes/rutaProducto'))
 app.use('/app/about', require('./routes/rutaAboutUs'))
+app.use('/app/login', require('./routes/rutasLogin'))
+app.use('/app/register', require('./routes/rutaRegisterUser'))
 
 
 //Aperturo el puerto donde iniciará

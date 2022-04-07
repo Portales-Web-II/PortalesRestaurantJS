@@ -13,14 +13,12 @@ router.get('/', (req, res) => {
 
 });
 
-router.post('/register', (req, res) => {
-
-    const { identidad, nombre, apellido, telefono, direccion } = req.body;
+router.post('/register', function(req, res){
     
-    body('identidad'), 
-    body('userName'),
-    body('email'),
-    body('password'), 
+    identidad: req.body.identidad
+    nombreUsuario: req.body.userName
+    correo: req.body.email
+    contrasena: req.body.password,
 
     controladorUsuario.guardar
 

@@ -30,22 +30,11 @@ exports.guardar = async (req, res) =>{
         res.json(validacion.array());
     }
     else{
-        const {identidad, nombre, apellido, telefono, direccion, nombreUsuario, correo, contrasena} = req.body;
+        const {identidad, nombreUsuario, correo, contrasena} = req.body;
                 
-        if(!identidad || !nombre || !apellido || !telefono || !nombreUsuario || !correo || !contrasena ){
+        if(!identidad || !nombreUsuario || !correo || !contrasena ){
 
             msj("Debe enviar los datos obligatorios", 200, [], res);
-
-        }
-        else{
-
-            await ModeloPersona.create({ //Esto es para almacenar los datos que se reciben
-                identidad: identidad,
-                nombre: nombre,
-                apellido: apellido,
-                telefono: telefono,
-                direccion: direccion
-            })
 
         }
         var Persona = await ModeloPersona.findOne({

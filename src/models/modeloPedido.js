@@ -5,40 +5,45 @@ const db = require('../config/db');
 const Pedido = db.define(
     "pedido",
     {
-        idPedido:{
+        idPedido: {
             type: sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
         },
 
-        direccionEntrega:{
+        direccionEntrega: {
             type: sequelize.STRING(250),
             allowNull: false,
         },
 
-        subtotal:{
+        subtotal: {
             type: sequelize.DOUBLE,
             allowNull: true,
         },
 
-        idCombos:{
+        idCombos: {
             type: sequelize.INTEGER,
             allowNull: true,
         },
 
-        idUsuario:{
+        idProductosPedido: {
+            type: sequelize.INTEGER,
+            allowNull: true,
+        },
+
+        idUsuario: {
             type: sequelize.INTEGER,
             allowNull: false,
         },
 
-        idProductosPedido:{
-            type: sequelize.INTEGER,
-            allowNull: true,
+        estado: {
+            type: sequelize.ENUM('recibido', 'facturado', 'cancelado'),
+            allowNull: false,
+            defaultvalue: 'recibido'
+
         }
-       
     },
-  
     {
         tableName: "pedido",
         timestamps: false,

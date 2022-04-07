@@ -5,34 +5,34 @@ const db = require('../config/db');
 const Facturacion = db.define(
     "facturacion",
     {
-        idFactura:{
+        idFactura: {
             type: sequelize.INTEGER,
             primaryKey: true,
             autoIncrement: true,
             allowNull: false,
         },
 
-        isv:{
+        isv: {
             type: sequelize.DOUBLE,
             default: "0.5",
             allowNull: false,
         },
 
-        total:{
+        total: {
             type: sequelize.DOUBLE,
             allowNull: false,
         },
 
-        fecha:{
+        fecha: {
             type: sequelize.DATE,
             allowNull: true,
         },
 
-        idPedido:{
+        idPedido: {
             type: sequelize.INTEGER,
             allowNull: false,
         },
-       
+
     },
 
     {

@@ -24,6 +24,8 @@ app.use('/app/menu', require('./routes/rutaProducto'))
 app.use('/app/about', require('./routes/rutaAboutUs'))
 app.use('/app/checkout', require('./routes/rutaCheckOut'))
 
+app.use('/app/detallefactura/', require('./routes/rutaDetalleFactura'));
+
 //Aperturo el puerto donde iniciará
 app.listen(5000, () =>{
     console.log("Servidor iniciado en el puerto 5000");

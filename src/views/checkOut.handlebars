@@ -16,30 +16,34 @@
                 <div class="row">
                     <div class="border col">
                         <p class="fs-2">Detalles de facturación</p>
-                        <form class="row g-3 needs-validation" novalidate>
+                        <form id="facturaForm" class="row g-3 needs-validation" novalidate>
                             <p class="fs-4">Información personal</p>
                             <div class="col-md-4">
                                 <div class="form-outline">
-                                    <input type="text" class="form-control" id="validationCustom01" value="" required />
+                                    <input type="text" class="form-control" id="nombreCli" value="" required />
                                     <label for="validationCustom01" class="form-label">Nombre</label>
-                                    <div class="valid-feedback">Looks good!</div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-outline">
-                                    <input type="text" class="form-control" id="validationCustom02" value="" required />
+                                    <input type="text" class="form-control" id="apellidoCli" value="" required />
                                     <label for="validationCustom02" class="form-label">Apellido</label>
-                                    <div class="valid-feedback">Looks good!</div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-outline">
-                                    <input type="text" class="form-control" id="validationCustom03" required />
+                                    <input type="text" class="form-control" id="telefonoCli" value="" required />
                                     <label for="validationCustom03" class="form-label">Número de teléfono</label>
                                 </div>
                             </div>
+                            <div class="col-md-6">
+                                <div class="form-outline">
+                                    <input type="text" class="form-control" id="total" value="" required />
+                                    <label for="validationCustom03" class="form-label">Total</label>
+                                </div>
+                            </div>
                             <div class="form-outline">
-                                <textarea class="form-control" id="validationTextarea" required></textarea>
+                                <textarea class="form-control" id="direccionCli" value="" required></textarea>
                                 <label for="validationTextarea" class="form-label">Dirección de entrega</label>
                             </div>
                             <p class="fs-4">Método de pago</p>
@@ -109,16 +113,13 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    {{#each listaDetalle}}
                                     <tr>
-                                        <td>Pollo</td>
-                                        <td>1</td>
-                                        <td>150</td>
+                                        <td>{{nombre}}</td>
+                                        <td>{{cantidad}}</td>
+                                        <td>{{precio}}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Pizza</td>
-                                        <td>1</td>
-                                        <td>200</td>
-                                    </tr>
+                                    {{/each}}
                                 </tbody>
                             </table>
                         </div>

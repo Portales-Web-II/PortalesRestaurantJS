@@ -9,5 +9,6 @@ const pagina = "Pago"
 // });
 
 router.get('/', controladorDetalleFactura.listarDetalle);
+router.put('/pedido', controladorDetalleFactura.modificarPedido);
 
 module.exports = router;

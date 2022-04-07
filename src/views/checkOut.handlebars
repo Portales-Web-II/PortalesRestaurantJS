@@ -16,34 +16,32 @@
                 <div class="row">
                     <div class="border col">
                         <p class="fs-2">Detalles de facturación</p>
-                        <form id="facturaForm" class="row g-3 needs-validation" novalidate>
+                        <form action="/pedido" method="post" id="facturaForm" class="row g-3 needs-validation" novalidate>
                             <p class="fs-4">Información personal</p>
                             <div class="col-md-4">
                                 <div class="form-outline">
-                                    <input type="text" class="form-control" id="nombreCli" value="" required />
+                                    <input type="text" class="form-control" id="nombreCli" value=""
+                                        onkeypress="return isNumericKey(event)" required />
                                     <label for="validationCustom01" class="form-label">Nombre</label>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-outline">
-                                    <input type="text" class="form-control" id="apellidoCli" value="" required />
+                                    <input type="text" class="form-control" id="apellidoCli" value=""
+                                        onkeypress="return isNumericKey(event)" required />
                                     <label for="validationCustom02" class="form-label">Apellido</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-outline">
-                                    <input type="text" class="form-control" id="telefonoCli" value="" required />
+                                    <input type="text" class="form-control" id="telefonoCli" value=""
+                                        onkeypress="return isNumberKey(event)" required />
                                     <label for="validationCustom03" class="form-label">Número de teléfono</label>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="form-outline">
-                                    <input type="text" class="form-control" id="total" value="" required />
-                                    <label for="validationCustom03" class="form-label">Total</label>
-                                </div>
-                            </div>
                             <div class="form-outline">
-                                <textarea class="form-control" id="direccionCli" value="" required></textarea>
+                                <textarea class="form-control" id="direccionCli" value="{{direccionEntrega}}"
+                                    onkeypress="return isNumericKey(event)" required></textarea>
                                 <label for="validationTextarea" class="form-label">Dirección de entrega</label>
                             </div>
                             <p class="fs-4">Método de pago</p>
@@ -62,7 +60,8 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="home" role="tabpanel"
                                     aria-labelledby="home-tab">
-                                    <input type="text" class="form-control" id="validationCustom02" value="" required />
+                                    <input type="text" class="form-control" id="validationCustom02" value=""
+                                        onkeypress="return isNumberKey(event)" required />
                                     <label for="validationCustom02" class="form-label">¿Necesitas cambio?</label>
                                     <div class="valid-feedback">Looks good!</div>
                                 </div>
@@ -77,6 +76,11 @@
                                                     </div>
                                                 </a>
                                             </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault1" required />
+                                                <label class="form-check-label" for="flexRadioDefault1"></label>
+                                            </div>
                                         </li>
                                         <li class="list-inline-item">
                                             <div class="bg-image hover-overlay ripple">
@@ -87,8 +91,34 @@
                                                     </div>
                                                 </a>
                                             </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault2" required />
+                                                <label class="form-check-label" for="flexRadioDefault2"></label>
+                                            </div>
                                         </li>
                                     </ul>
+                                    <div class="col-md-4">
+                                        <div class="form-outline">
+                                            <input type="text" class="form-control" id="numeroTar" value=""
+                                                onkeypress="return isNumberKey(event)" required />
+                                            <label for="validationCustom01" class="form-label">Número de tarjeta</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-outline">
+                                            <input type="text" class="form-control" id="vencimiento" value=""
+                                                onkeypress="return isNumberKey(event)" required />
+                                            <label for="validationCustom01" class="form-label">Vencimiento</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-outline">
+                                            <input type="text" class="form-control" id="numeroTar" value=""
+                                                onkeypress="return isNumberKey(event)" required />
+                                            <label for="validationCustom01" class="form-label">CVC</label>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                     </div>
@@ -124,11 +154,28 @@
                             </table>
                         </div>
                         <div class="d-flex align-items-center justify-content-center" style="height: 150px;">
-                            <button class="btn btn-primary" type="submit">Confirmar pedido</button>
+                            <button class="btn btn-primary" type="submit" data-mdb-toggle="modal"
+                                data-mdb-target="#exampleModal">Confirmar pedido</button>
                         </div>
                         </form>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Facturación</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">Factura realizada con exito...</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary">Ok</button>
             </div>
         </div>
     </div>

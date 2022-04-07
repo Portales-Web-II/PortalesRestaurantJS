@@ -27,14 +27,14 @@ exports.guardarFactura = async (req, res) =>{
         res.send("Debe enviar los datos que se solicitan");
     }
     else{
-        await ModeloCargo.create({ //Esto es para almacenar los datos que se reciben
+        await ModeloFacturacion.create({ //Esto es para almacenar los datos que se reciben
             isv: isv,
             total: total,
             fecha: fecha,
             idPedido: idPedido,
         })
         .then((data)=>{ //Este es para el mensaje que confirma el almacenamiento
-            console.log(data.isv);
+            console.log(data);
             res.send("Registro almacenado correctamente...");
         })
         .catch((error)=>{

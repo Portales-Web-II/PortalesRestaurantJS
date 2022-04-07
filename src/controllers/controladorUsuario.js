@@ -1,4 +1,5 @@
 const ModeloUsuario = require("../models/modeloUsuario");
+const ModeloPersona = require("../models/modeloPersona");
 const { validationResult } = require('express-validator');
 exports.inicio = (req, res) => {
 
@@ -29,12 +30,21 @@ exports.guardar = async (req, res) =>{
         res.json(validacion.array());
     }
     else{
-        const { nombreUsuario, correo, contrasena } = req.body;
-        if(!nombreUsuario || !correo || !contrasena ){
+        const {identidad, nombreUsuario, correo, contrasena} = req.body;
+                
+        if(!identidad || !nombreUsuario || !correo || !contrasena ){
 
-            res.send("Debe enviar los datos obligatorios");
+            msj("Debe enviar los datos obligatorios", 200, [], res);
 
         }
+        var Persona = await ModeloPersona.findOne({
+
+            where:{
+                identidad: identidad
+            }
+
+        });
+        const idPersona = Persona.idPersona
         var buscarUsuario = await ModeloUsuario.findOne({
             where:{
                 nombreUsuario: nombreUsuario
@@ -46,21 +56,23 @@ exports.guardar = async (req, res) =>{
             }
         });
         if(buscarUsuario || buscarCorreo){
-            res.send("El Usuario y/o el Correo ya se encuentran registrados");
+            console.log("El Usuario y/o el Correo ya se encuentran registrados");
+            msj("El Usuario y/o el Correo ya se encuentran registrados", 200, [], res);
         }
         else{
 
             await ModeloUsuario.create({
                 nombreUsuario,
                 correo,
-                contrasena
+                contrasena,
+                idPersona
             })
             .then((data) => {
-                console.log(data.contrasena);
-                res.send("Registro Almacenado!");              
+                //console.log(data.contrasena);
+                msj("Registro Almacenado!", 200, [], res);            
             }).catch((err) => {
                 console.log(err);
-                res.send("Error al guardar los datos");
+                msj("Error al guardar los datos", 200, [], res);
             });
         }
     }
@@ -69,26 +81,29 @@ exports.guardar = async (req, res) =>{
 exports.modificarContrasena = async (req, res) =>{
 
     const validacion = validationResult(req);
+    console.log(req.body);
     if(!validacion.isEmpty()){
         console.log(validacion.array());
-        res.json(validacion.array());
+        res.json(validacion.array())
     }
     else{
-        const {idUsuario} = req.query;
-        const {contrasena} = req.body;
-        if(!idUsuario || !contrasena){
-            res.send("Debe enviar los Datos Obligatorios");
+        const {correo, pin, contrasena} = req.body;
+        if(!pin || !contrasena){
+            msj("Debe enviar los Datos Obligatorios", 200, [], res);
         }
         else{
 
             var buscarUsuario = await ModeloUsuario.findOne({
                 where:{
-                    idUsuario: idUsuario,
+                    correo: correo,
                     estado: 'activo'
                 }
             });
             if(!buscarUsuario){
-                res.send("El Usuario no existe o no se encuentra activo");
+                msj("El Usuario no existe o no se encuentra activo", 200, [], res);
+            }
+            else if(buscarUsuario.pin != pin){
+                msj("El Pin ingresado no es válido", 200, [], res);
             }
             else{
 
@@ -96,49 +111,14 @@ exports.modificarContrasena = async (req, res) =>{
                 await buscarUsuario.save()
                 .then((data) => {
                     console.log(data);
-                    res.send("Registro Actualizado Correctamente");
+                    msj("Registro Actualizado Correctamente", 200, [], res);
                 }).catch((err) => {
                     console.log(err);
-                    res.send("Error al Actualizar");
+                   msj("Error al Actualizar", 200, [], res);
                 });
 
-            }
+            }            
             console.log(buscarUsuario);
-        }
-    }
-    
-}
-exports.eliminar = async (req, res) =>{
-
-    const {idUsuario} = req.query;
-    const {nombreUsuario} = req.body;
-    if(!nombreUsuario || !idUsuario){
-        res.send("Debe enviar el Nombre de Usuario");
-    }
-    else{
-
-        var buscarUsuario = await ModeloUsuario.findOne({
-            where:{
-                nombreUsuario: nombreUsuario
-            }
-        })
-        if(!buscarUsuario){
-            res.send("El usuario no existe");
-        }
-        else{
-
-            buscarUsuario.estado = 'inactivo';
-            buscarUsuario.save()
-
-            .then((data) => {
-                console.log(data);
-                res.send("Registro Eliminado Correctamente"); 
-            })
-            .catch((err) => {
-                console.log(err);
-                res.send("Error al eliminar");
-            });
-
         }
     }    
 

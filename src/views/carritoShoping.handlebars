@@ -1,0 +1,303 @@
+  
+  {{!-- Header --}}
+<div class="p-5 text-center bg-image" style=" background-image: url('/assets/img/menu.jpg'); height: 400px;">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
+        <div class="d-flex justify-content-center align-items-center h-100">
+            <div class="text-white">
+                <h1 class="mb-3">Bolsa de la compra</h1>
+                <h4 class="mb-3"></h4>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sección Contenido de la pagina -->
+<!-- Linea separadora entre contenedores -->
+<div class="container-fluid" style="width: 90%;">
+    <br>
+    <hr style="color: black;">
+    <br>
+</div>
+<!-- Linea separadora entre contenedores -->
+
+<!-- Contenido de servicios -->
+
+<div class="container container-web-page">
+    <h3 class="text-center text-uppercase poppins-regular font-weight-bold"></h3>
+    <br>
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-4">
+            <p class="text-center"><i class="fas fa-shipping-fast fa-5x"></i></p>
+            <h5 class="text-center text-uppercase poppins-regular font-weight-bold">Envíos a domicilio</h5>
+            <p class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione ad possimus
+                modi repellendus? Expedita, vitae rerum at aliquam eligendi soluta veniam ut dolor facere fugiat
+                quod, maxime ad accusamus quisquam.</p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <p class="text-center"><i class="fas fa-utensils fa-5x"></i></p>
+            <h5 class="text-center text-uppercase poppins-regular font-weight-bold">Ventas al por mayor</h5>
+            <p class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione ad possimus
+                modi repellendus? Expedita, vitae rerum at aliquam eligendi soluta veniam ut dolor facere fugiat
+                quod, maxime ad accusamus quisquam.</p>
+        </div>
+        <div class="col-12 col-sm-6 col-md-4">
+            <p class="text-center"><i class="fas fa-store-alt fa-5x"></i></p>
+            <h5 class="text-center text-uppercase poppins-regular font-weight-bold">Reservaciones de local</h5>
+            <p class="text-center">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione ad possimus
+                modi repellendus? Expedita, vitae rerum at aliquam eligendi soluta veniam ut dolor facere fugiat
+                quod, maxime ad accusamus quisquam.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+  
+            
+  <table id="tabla_carrito_compra" class="table table-bordered">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Precio</th>
+        <th>Descripcion</th>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr>
+        <td>{{ID}}</td>
+        <td>{{Nombre}}</td>
+        <td>{{Cantidad}}</td>
+        <td>{{Precio}}</td>
+        <td>{{Descripcion}}</td>
+        <td>
+        
+            
+           {{!--  <button type="submit" 
+            onclick="myFunction({{ID}} , 1 , {{Precio}})"
+            value="Agregar" name="btnAgregar" class="btn btn-primary btn-rounded">Pagar</button> 
+       --}}
+
+             <button class="btn btn-primary" id="btnPagar" data-toggle="modal" data-target="#modal_productospedido"
+                data-ID="{{ID}}"
+                data-Nombre="{{Nombre}}"
+                data-Cantidad="{{Cantidad}}"
+                data-Precio="{{Precio}}"                
+                data-Descripcion="{{Descripcion}}"                
+            ><i class="fa fa-edit">Pagar</i></button> 
+
+            &nbsp&nbsp&nbsp
+
+        {{!-- <form action="/api/carrito-compras/procesar-pago" method="post">
+            <input name="ID" type="hidden" id="ID" value="{{ID}}" />
+            <input name="Cantidad" type="hidden" id="Cantidad" value="1" />
+            <input name="Precio" type="hidden" id="Precio" value="{{Precio}}" />
+            <button type="submit" value="Agregar" name="btnAgregar" class="btn btn-primary btn-rounded">Pagar</button> 
+        </form>
+
+            <button class="btn btn-danger" data-toggle="modal" data-target="#modal_eliminar_productospedido"
+                data-ID="{{ID}}"
+                data-Cantidad="{{Cantidad}}"
+                data-Precio="{{Precio}}"                
+            ><i class="fa fa-trash">Eliminar</i></button> --}}
+
+
+        </td>
+
+      </tr>  
+
+    </tbody>
+  </table>
+</div>
+
+
+
+<!-- Linea separadora entre contenedores -->
+<div class="container-fluid" style="width: 90%;">
+    <br>
+    <hr style="color: black;">
+    <br>
+</div>
+<!-- Linea separadora entre contenedores -->
+
+<div class="container-fluid" style="width: 85%;">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+            <div class="card hover-shadow">
+                <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top"
+                    alt="Hollywood Sign on The Hill" />
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                        This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card hover-shadow">
+                <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top"
+                    alt="Palm Springs Road" />
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">
+                        This is a longer card with supporting text below as a natural lead-in to
+                        additional content. This content is a little bit longer.
+                    </p>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+
+<div class="modal" id="modal_productospedido">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+        <h4 class="modal-title h6 text-sm-center" id="myModalLabel"><i class="fa-solid fa-circle-check"></i>Producto añadido correctamente a su carrito de compra</h4>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div class="row">
+          
+          <div class="">
+            <div class="cart-content">
+
+
+               <div class="form-group">
+                            <label class="col-sm-3 control-label">ID</label>
+                            <div class="">
+                                <input type="text" class="form-control" id="idProducto" name="" disabled="disabled">
+                            </div>
+                        </div>
+                        
+               <div class="form-group">
+                            <label class="col-sm-3 control-label">Nombre</label>
+                            <div class="">
+                                <input type="text" class="form-control" id="Nombre" name="" disabled="disabled">
+                            </div>
+                        </div>
+
+                <div class="form-group">
+                            <label class="col-sm-3 control-label">Cantidad</label>
+                            <div class="">
+                                <select id="cantidad" name="" class="select2_single form-control country" >
+                                    <option></option>
+                                    
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    
+                                </select>
+                            </div>
+                        </div>
+
+               <div class="form-group">
+                            <label class="col-sm-3 control-label">Precio</label>
+                            <div class="">
+                                <input type="text" class="form-control" id="Precio" name="" disabled="disabled">
+                            </div>
+                        </div>
+
+                 
+
+               <div class="form-group">
+                            <label class="col-sm-3 control-label">Descripcion</label>
+                            <div class="">
+                                <input type="text" class="form-control" id="Descripcion" name="" disabled="disabled">
+                            </div>
+                        </div>
+
+                <br/>
+              <div class="cart-content-btn">
+                <button id="btn_realizar_pago" type="button" class="btn btn-primary"  data-dismiss="modal">Aceptar</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>            
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Linea separadora entre contenedores -->
+<div class="container-fluid" style="width: 90%;">
+    <br>
+    <hr style="color: black;">
+    <br>
+</div>
+<!-- Linea separadora entre contenedores -->
+
+<script type="text/javascript">
+
+document.getElementById("btnPagar").onclick = function ( event ){
+     
+    var idProducto = document.getElementById("btnPagar").getAttribute("data-ID");
+    var Nombre = document.getElementById("btnPagar").getAttribute("data-Nombre");
+    var cantidad = document.getElementById("btnPagar").getAttribute("data-Cantidad");
+    var Precio = document.getElementById("btnPagar").getAttribute("data-Precio");
+    var Descripcion = document.getElementById("btnPagar").getAttribute("data-Descripcion");
+
+    document.getElementById("idProducto").value = idProducto;
+    document.getElementById("Nombre").value = Nombre;
+    document.getElementById("cantidad").value = cantidad;
+    document.getElementById("Precio").value = Precio;
+    document.getElementById("Descripcion").value = Descripcion;
+
+}
+
+document.getElementById("btn_realizar_pago").onclick = function ( event ){
+     
+    var idProducto = document.getElementById("idProducto").value;
+    var Nombre = document.getElementById("Nombre").value;
+    var cantidad = document.getElementById("cantidad").value;
+    var Precio = document.getElementById("Precio").value;
+    var Descripcion = document.getElementById("Descripcion").value;
+    //console.log(idProducto+' '+Nombre+' '+cantidad+' '+Precio);
+
+    myFunctionProcesaPago( idProducto, cantidad , Precio );
+}
+
+function myFunctionProcesaPago( idProducto,cantidad,Precio ){
+
+fetch('http://localhost:5000/api/carrito-compras/procesar-pago', {
+  method: 'POST', // or 'PUT'
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    idProducto: idProducto,
+    cantidad: cantidad,
+    Precio: Precio
+  }),
+})
+.then(response => response.json())
+.then(data => {
+  console.log('Success:', data);
+  alert(data);
+})
+.catch((error) => {
+  console.error('Error:', error);
+});
+
+}
+</script>

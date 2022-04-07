@@ -7,7 +7,6 @@ exports.inicio = async (req, res) =>{
 };
 
 exports.listarProductos = async (req, res) =>{
-
     try {
         var listaProductos = await ModeloProducto.findAll({
             attributes: [

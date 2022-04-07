@@ -9,19 +9,21 @@
     </div>
 </div>
 
-<div class="container">
+<div class="container-fluid">
     <div class="row">
         <div class="col-md">
-            <div class="container">
+            <div class="container-fluid">
                 <div class="row">
                     <div class="border col">
                         <p class="fs-2">Detalles de facturación</p>
-                        <form action="/pedido" method="post" id="facturaForm" class="row g-3 needs-validation" novalidate>
+                        <form action="/pedido" method="post" id="facturaForm" class="row g-3 needs-validation"
+                            novalidate>
                             <p class="fs-4">Información personal</p>
                             <div class="col-md-4">
                                 <div class="form-outline">
                                     <input type="text" class="form-control" id="nombreCli" value=""
                                         onkeypress="return isNumericKey(event)" required />
+                                    <div class="invalid-feedback">Campo obligatorio</div>
                                     <label for="validationCustom01" class="form-label">Nombre</label>
                                 </div>
                             </div>
@@ -29,6 +31,7 @@
                                 <div class="form-outline">
                                     <input type="text" class="form-control" id="apellidoCli" value=""
                                         onkeypress="return isNumericKey(event)" required />
+                                    <div class="invalid-feedback">Campo obligatorio</div>
                                     <label for="validationCustom02" class="form-label">Apellido</label>
                                 </div>
                             </div>
@@ -36,12 +39,14 @@
                                 <div class="form-outline">
                                     <input type="text" class="form-control" id="telefonoCli" value=""
                                         onkeypress="return isNumberKey(event)" required />
+                                    <div class="invalid-feedback">Campo obligatorio</div>
                                     <label for="validationCustom03" class="form-label">Número de teléfono</label>
                                 </div>
                             </div>
                             <div class="form-outline">
-                                <textarea class="form-control" id="direccionCli" value="{{direccionEntrega}}"
-                                    onkeypress="return isNumericKey(event)" required></textarea>
+                                <textarea class="form-control" id="direccionCli" value=""
+                                    onkeypress="return isNumericKey(event)" title="Rellene este campo"
+                                    required></textarea>
                                 <label for="validationTextarea" class="form-label">Dirección de entrega</label>
                             </div>
                             <p class="fs-4">Método de pago</p>
@@ -60,10 +65,10 @@
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="home" role="tabpanel"
                                     aria-labelledby="home-tab">
+                                    <label for="validationCustom02" class="form-label">¿Necesitas cambio?</label>
                                     <input type="text" class="form-control" id="validationCustom02" value=""
                                         onkeypress="return isNumberKey(event)" required />
-                                    <label for="validationCustom02" class="form-label">¿Necesitas cambio?</label>
-                                    <div class="valid-feedback">Looks good!</div>
+                                    <div class="invalid-feedback">Campo obligatorio</div>
                                 </div>
                                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                     <ul class="mb-0 list-inline mt-3">
@@ -102,6 +107,7 @@
                                         <div class="form-outline">
                                             <input type="text" class="form-control" id="numeroTar" value=""
                                                 onkeypress="return isNumberKey(event)" required />
+                                                                                    <div class="invalid-feedback">Campo obligatorio</div>
                                             <label for="validationCustom01" class="form-label">Número de tarjeta</label>
                                         </div>
                                     </div>
@@ -109,6 +115,7 @@
                                         <div class="form-outline">
                                             <input type="text" class="form-control" id="vencimiento" value=""
                                                 onkeypress="return isNumberKey(event)" required />
+                                                                                    <div class="invalid-feedback">Campo obligatorio</div>
                                             <label for="validationCustom01" class="form-label">Vencimiento</label>
                                         </div>
                                     </div>
@@ -116,6 +123,7 @@
                                         <div class="form-outline">
                                             <input type="text" class="form-control" id="numeroTar" value=""
                                                 onkeypress="return isNumberKey(event)" required />
+                                                                                    <div class="invalid-feedback">Campo obligatorio</div>
                                             <label for="validationCustom01" class="form-label">CVC</label>
                                         </div>
                                     </div>
@@ -132,7 +140,7 @@
                                 <div class="invalid-feedback">Please enter a message in the textarea.</div>
                             </div>
                         </div>
-                        <div class="container-fluid">
+                        <div class="container-fluid-fluid">
                             <p class="fs-2 text-center">Tu orden</p>
                             <table class="table table-hover table-bordered table-striped">
                                 <thead>
@@ -154,8 +162,7 @@
                             </table>
                         </div>
                         <div class="d-flex align-items-center justify-content-center" style="height: 150px;">
-                            <button class="btn btn-primary" type="submit" data-mdb-toggle="modal"
-                                data-mdb-target="#exampleModal">Confirmar pedido</button>
+                            <input class="btn btn-primary" type="submit" value="Confirmar pedido">
                         </div>
                         </form>
                     </div>

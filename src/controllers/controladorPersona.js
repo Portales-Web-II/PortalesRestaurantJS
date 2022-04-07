@@ -26,15 +26,16 @@ exports.listarPersonas = async (req, res) =>{
 //Consulta para guardar
 exports.guardarPersona = async (req, res) =>{
     //Capturamos los valores que vienen desde el postmas o aplicación
-    const{nombre, apellido, telefono, direccion} = req.body; // Se recomienda colocar así como está en la BDD
+    const{identidad, nombre, apellido, telefono, direccion} = req.body; // Se recomienda colocar así como está en la BDD
 
     //Compruebo que si vengan datos y le digo al usuario que sino que revise
-    if(!nombre || !apellido || !telefono)
+    if(!identidad || !nombre || !apellido || !telefono)
     {
         res.send("Debe enviar los datos que se solicitan");
     }
     else{
         await ModeloPersona.create({ //Esto es para almacenar los datos que se reciben
+            identidad: identidad,
             nombre: nombre,
             apellido: apellido,
             telefono: telefono,

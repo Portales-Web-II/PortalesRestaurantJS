@@ -43,12 +43,16 @@
                                     <label for="validationCustom03" class="form-label">Número de teléfono</label>
                                 </div>
                             </div>
-                            <div class="form-outline">
-                                <textarea class="form-control" id="direccionCli" value=""
-                                    onkeypress="return isNumericKey(event)" title="Rellene este campo"
-                                    required></textarea>
-                                <label for="validationTextarea" class="form-label">Dirección de entrega</label>
+                            <div class="col-md-6">
+                                <div class="form-outline">
+                                    <textarea class="form-control" id="direccionCli" value=""
+                                        onkeypress="return isNumericKey(event)" title="Rellene este campo"
+                                        required></textarea>
+                                    <label for="validationTextarea" class="form-label">Dirección de entrega</label>
+                                    <div class="invalid-feedback">Campo obligatorio</div>
+                                </div>
                             </div>
+
                             <p class="fs-4">Método de pago</p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item" role="presentation">
@@ -63,71 +67,81 @@
                                 </li>
                             </ul>
                             <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="home" role="tabpanel"
+                                <div class="tab-pane fade show active px-4" id="home" role="tabpanel"
                                     aria-labelledby="home-tab">
                                     <label for="validationCustom02" class="form-label">¿Necesitas cambio?</label>
-                                    <input type="text" class="form-control" id="validationCustom02" value=""
+                                    <input type="text" class="form-control" id="cambio" value=""
                                         onkeypress="return isNumberKey(event)" required />
                                     <div class="invalid-feedback">Campo obligatorio</div>
                                 </div>
-                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                    <ul class="mb-0 list-inline mt-3">
-                                        <li class="list-inline-item">
-                                            <div class="bg-image hover-overlay ripple">
-                                                <img src="/assets/img/visa.png" class="img-fluid"
-                                                    style="height: 50px;" />
-                                                <a href="#!">
-                                                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.367);">
-                                                    </div>
-                                                </a>
+                                <div class="tab-pane fade px-4" id="profile" role="tabpanel"
+                                    aria-labelledby="profile-tab">
+                                    <div class="container overflow-hidden">
+                                        <ul class="mb-0 list-inline mt-3">
+                                            <li class="list-inline-item">
+                                                <div class="bg-image hover-overlay ripple">
+                                                    <img src="/assets/img/visa.png" class="img-fluid"
+                                                        style="height: 50px;" />
+                                                    <a href="#!">
+                                                        <div class="mask"
+                                                            style="background-color: rgba(0, 0, 0, 0.367);">
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        id="radioVisa" required />
+                                                    <label class="form-check-label" for="flexRadioDefault1"></label>
+                                                </div>
+                                            </li>
+                                            <li class="list-inline-item">
+                                                <div class="bg-image hover-overlay ripple">
+                                                    <img src="/assets/img/mastercard.png" class="img-fluid"
+                                                        style="height: 60px;" />
+                                                    <a href="#!">
+                                                        <div class="mask"
+                                                            style="background-color: rgba(0, 0, 0, 0.367);">
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                        id="radioMc" required />
+                                                    <label class="form-check-label" for="flexRadioDefault2"></label>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <br>
+                                        <div class="col-md-4">
+                                            <div class="form-outline">
+                                                <input type="text" class="form-control" id="numeroTar" value=""
+                                                    onkeypress="return isNumberKey(event)" required />
+                                                <label for="numeroTar" class="form-label">Número de
+                                                    tarjeta</label>
+                                                <div class="invalid-feedback">Campo obligatorio</div>
                                             </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                    id="flexRadioDefault1" required />
-                                                <label class="form-check-label" for="flexRadioDefault1"></label>
-                                            </div>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <div class="bg-image hover-overlay ripple">
-                                                <img src="/assets/img/mastercard.png" class="img-fluid"
-                                                    style="height: 60px;" />
-                                                <a href="#!">
-                                                    <div class="mask" style="background-color: rgba(0, 0, 0, 0.367);">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="form-check">
-                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                    id="flexRadioDefault2" required />
-                                                <label class="form-check-label" for="flexRadioDefault2"></label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                    <div class="col-md-4">
-                                        <div class="form-outline">
-                                            <input type="text" class="form-control" id="numeroTar" value=""
-                                                onkeypress="return isNumberKey(event)" required />
-                                                                                    <div class="invalid-feedback">Campo obligatorio</div>
-                                            <label for="validationCustom01" class="form-label">Número de tarjeta</label>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-outline">
-                                            <input type="text" class="form-control" id="vencimiento" value=""
-                                                onkeypress="return isNumberKey(event)" required />
-                                                                                    <div class="invalid-feedback">Campo obligatorio</div>
-                                            <label for="validationCustom01" class="form-label">Vencimiento</label>
+                                        <br>
+                                        <div class="col-md-4">
+                                            <div class="form-outline">
+                                                <input type="date" id="vencimiento" name="trip-start" value="2022-01-01"
+                                                    min="2022-01-01" max="2026-01-01" required>
+                                                <label for="vencimiento" class="form-label">Vencimiento</label>
+                                                <div class="invalid-feedback">Campo obligatorio</div>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="form-outline">
-                                            <input type="text" class="form-control" id="numeroTar" value=""
-                                                onkeypress="return isNumberKey(event)" required />
-                                                                                    <div class="invalid-feedback">Campo obligatorio</div>
-                                            <label for="validationCustom01" class="form-label">CVC</label>
+                                        <div class="col-md-4">
+                                            <div class="form-outline">
+                                                <input type="text" maxlength="3" class="form-control" id="cvc" value=""
+                                                    onkeypress="return isNumberKey(event)" required />
+                                                <label for="cvc" class="form-label">CVC</label>
+                                                <div class="invalid-feedback">Campo obligatorio</div>
+                                            </div>
                                         </div>
+                                        <br>
                                     </div>
                                 </div>
+                                <br>
                             </div>
                     </div>
                     <div class="border col">
@@ -162,7 +176,8 @@
                             </table>
                         </div>
                         <div class="d-flex align-items-center justify-content-center" style="height: 150px;">
-                            <input class="btn btn-primary" type="submit" value="Confirmar pedido">
+                            <button type="submit" class="btn btn-primary" onclick="validateModalFactura()">Confirmar
+                                pedido</button>
                         </div>
                         </form>
                     </div>
@@ -181,8 +196,22 @@
             </div>
             <div class="modal-body">Factura realizada con exito...</div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Ok</button>
+                <button type="button" class="btn btn-primary" data-mdb-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ErrorModal" tabindex="-1" aria-labelledby="exampleErrorModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleErrorModal">Error</h5>
+                <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">Debe ingresar todos los campos obligatorios.</div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-mdb-dismiss="modal">Ok</button>
             </div>
         </div>
     </div>

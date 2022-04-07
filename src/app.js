@@ -1,5 +1,6 @@
 //Definición de variables importantes
 const express = require('express');
+const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
 const morgan = require('morgan');
 const path  = require('path');
@@ -13,6 +14,8 @@ app.set('port', process.env.port || 5000);
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}))
 app.set('json spaces', 2);
 app.engine('handlebars', engine());
 app.set('view engine', 'handlebars');
@@ -24,8 +27,8 @@ app.use('/app', require('./routes/index'))
 app.use('/app/menu', require('./routes/rutaProducto'))
 app.use('/app/about', require('./routes/rutaAboutUs'))
 app.use('/app/login', require('./routes/rutasLogin'))
-app.use('/app/register', require('./routes/rutaRegisterUser'))
-
+app.use('/app/Users', require('./routes/rutaRegisterUser'))
+app.use('/app/Persons', require('./routes/rutaPersonas'))
 
 //Aperturo el puerto donde iniciará
 app.listen(5000, () =>{

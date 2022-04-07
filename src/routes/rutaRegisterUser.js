@@ -1,27 +1,28 @@
 const { Router } = require('express');
+const { body } = require('express-validator');
 
 const router = Router();
 
-const pagina = "Menu"
+const controladorUsuario = require("../controllers/controladorUsuario");
+
+const pagina = "Register User"
 
 router.get('/', (req, res) => {
 
-    res.render('registerUser', {pagina: "Register User", layout: false})
+    res.render('registerUser', {pagina: pagina, layout: false})
 
 });
 
-router.post('/', (req, res) => {
+router.post('/register', (req, res) => {
 
-    res.render('registerUser', {pagina: "Register User", layout: false})
+    const { identidad, nombre, apellido, telefono, direccion } = req.body;
+    
+    body('identidad'), 
+    body('userName'),
+    body('email'),
+    body('password'), 
 
-    identidad = req.body.identidad;
-    nombre = req.body.name;
-    apellido = req.body.apellido
-    telefono = req.body.telefono;
-    direccion = req.body;
-    userName = req.body.userName;
-    email = req.body.email;
-    password = req.body.password;
+    controladorUsuario.guardar
 
 })
 

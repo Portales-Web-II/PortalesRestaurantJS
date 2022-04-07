@@ -1,9 +1,9 @@
-const express = require ('express');
-const routes = express.Router ();
+const { Router } = require('express');
 
-const pagina = "Portales Restaurant"
+const controladorHome = require('../controllers/controladorHome');
+const router = Router();
 
-routes.get( '/', (req, res) => {
-    res.render('home' , {pagina});
-});
-module.exports = routes;
+router.get('/', controladorHome.listarProductos);
+
+
+module.exports = router;

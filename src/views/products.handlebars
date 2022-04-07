@@ -1,4 +1,5 @@
 {{! Header }}
+<script src="/js/filtro.js"></script>
 <div class="p-5 text-center bg-image" style="
       background-image: url('/assets/img/menu.jpg');
       height: 400px;">
@@ -21,9 +22,55 @@
 <!-- Linea separadora entre contenedores -->
 
 <div class="container-fluid" style="width: 85%;">
-  <div class="row row-cols-1 row-cols-md-2 g-4">
+
+
+
+  <!-- Menu Categorias -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- Container wrapper -->
+    <div class="container-fluid">
+      <!-- Toggle button -->
+      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarCenteredExample"
+        aria-controls="navbarCenteredExample" aria-expanded="false" aria-label="Toggle navigation">
+        <ul class="list-inline mb-0 mt-3">
+          <li class="list-inline-item">
+            <i class="fas fa-bars"></i>
+          </li>
+          <li class="list-inline-item">
+            <p>Categorias</p>
+          </li>
+        </ul>
+      </button>
+
+      <!-- Collapsible wrapper -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarCenteredExample">
+        <!-- Left links -->
+        <ul class="navbar-nav mb-2 mb-lg-0 category_list">
+          <li class="nav-item">
+            <a class="nav-link category_item" href="#" category="all">Todo</a>
+          </li>
+          {{#each listaTipoProducto}}
+          <li class="nav-item">
+            <a class="nav-link text-capitalize category_item" href="#"
+              category="{{idTipoProducto}}">{{nombre}}</a>
+          </li>
+          {{/each}}
+        </ul>
+        <!-- Left links -->
+      </div>
+      <!-- Collapsible wrapper -->
+    </div>
+    <!-- Container wrapper -->
+  </nav>
+  <br>
+  <!-- Menu Categorias -->
+
+
+
+
+  <div class="row row-cols-1 row-cols-md-2 g-4 products_list">
     {{#each listaProductos}}
-    <div class="col">
+    <div class="col product_item" category="{{idTipoProducto}}">
       <div class="card hover-shadow text-center">
         <div class="p-5 text-center bg-image" style="
       background-image: url('{{imagen}}');
@@ -41,6 +88,7 @@
             <input name="Precio" type="hidden" id="Precio" value="{{precio}}" />
             <input name="Imagen" type="hidden" id="Precio" value="{{imagen}}" />
             <input name="Descripcion" type="hidden" id="Precio" value="{{descripcion}}" />
+            <input name="Tipo" type="hidden" id="Tipo" value="{{idTipoProducto}}" />
             <button type="submit" value="Agregar" name="btnAgregar" class="btn btn-primary btn-rounded">Agregar al
               carrito</button>
           </form>
@@ -50,3 +98,10 @@
     {{/each}}
   </div>
 </div>
+<!-- Linea separadora entre contenedores -->
+<div class="container-fluid" style="width: 90%;">
+  <br>
+  <hr style="color: black;">
+  <br>
+</div>
+<!-- Linea separadora entre contenedores -->

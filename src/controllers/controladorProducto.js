@@ -1,4 +1,6 @@
 const ModeloProducto = require('../models/modeloProducto');
+const ModeloTipoProducto = require('../models/modeloTipoProducto');
+const { Op } = require("sequelize");
 
 exports.inicio = async (req, res) =>{
     res.send("Estas en el inicio de productos");
@@ -17,12 +19,29 @@ exports.listarProductos = async (req, res) =>{
                 'idTipoProducto'
             ]
         });
+
+        var listaTipoProducto = await ModeloTipoProducto.findAll({
+            attributes: [
+                'idTipoProducto',
+                'nombre',
+                'idTipoPrincipal'
+            ],
+            where: {
+                [Op.not]: [
+                  { idTipoPrincipal: null }
+                ]
+              }
+        });
+        
+        listaTipoProducto = JSON.stringify(listaTipoProducto);
+        listaTipoProducto = JSON.parse(listaTipoProducto);
+        
+        console.log(listaTipoProducto);
+
         listaProductos = JSON.stringify(listaProductos);
         listaProductos = JSON.parse(listaProductos);
-
-        console.log(listaProductos)
-
-        res.render('products', {pagina: "Menu", listaProductos} )
+        
+        res.render('products', {pagina: "Menu", listaProductos, listaTipoProducto} )
     } catch (error) {
         res.render('error', {pagina: "ERROR", error, layout: false} )
     }

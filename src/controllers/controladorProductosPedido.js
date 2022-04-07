@@ -28,7 +28,7 @@ exports.guardarProductosPedido = async (req, res) =>{
             cantidad:cantidad
         })
         .then((data)=>{ 
-            console.log(data.nombre);
+            console.log(data.idProductosPedido);
             res.send("Registro almacenado correctamente...");
         })
         .catch((error)=>{

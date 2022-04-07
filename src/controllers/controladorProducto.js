@@ -5,13 +5,25 @@ exports.inicio = async (req, res) =>{
 };
 
 exports.listarProductos = async (req, res) =>{
-    const listaProductos = await ModeloProducto.findAll();
-    
-    if(listaProductos.length == 0){
-        res.send("No existen productos en la base");
-    }
-    else{
-        res.json(listaProductos);
+    try {
+        var listaProductos = await ModeloProducto.findAll({
+            attributes: [
+                'idProducto',
+                'nombre',
+                'precio',
+                'imagen',
+                'descripcion',
+                'idTipoProducto'
+            ]
+        });
+        listaProductos = JSON.stringify(listaProductos);
+        listaProductos = JSON.parse(listaProductos);
+
+        console.log(listaProductos)
+
+        res.render('products', {pagina: "Menu", listaProductos} )
+    } catch (error) {
+        res.render('error', {pagina: "ERROR", error} )
     }
 };
 

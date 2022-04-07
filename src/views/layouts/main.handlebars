@@ -16,6 +16,9 @@
         href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
     <!-- MDB -->
     <link rel="stylesheet" href="/css/mdb.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    
+
     <title>Portales Restaurant</title>
 </head>
 
@@ -35,5 +38,10 @@
     <script src="/js/bootstrap.min.js"></script>
     <script src="/js/main.js"></script>
     <script type="text/javascript" src="/js/mdb.min.js"></script>
-
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+    <script type="text/javascript">
+    $(document).ready( function () {
+        $('#tabla_carrito_compra').DataTable();
+    } );
+    </script>
 </body>
